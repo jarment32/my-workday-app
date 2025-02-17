@@ -77,3 +77,11 @@ th, td {
     padding: 8px;
     text-align: left;
 }
+
+.admin-section {
+    margin-top: 20px;
+}
+
+.admin-section h3 {
+    margin-bottom: 10px;
+}

@@ -21,13 +21,20 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Aquí va la lógica de autenticación
-    if (username === 'admin' && password === 'admin') {
+    // Obtener usuarios almacenados en localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Buscar el usuario en la lista de usuarios
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
         localStorage.setItem('authenticated', 'true');
-        window.location.href = 'admin.html';
-    } else if (username !== '' && password !== '') {
-        localStorage.setItem('authenticated', 'true');
-        showContent('add-day');
+        localStorage.setItem('role', user.role);
+        if (user.role === 'admin') {
+            window.location.href = 'admin.html';
+        } else {
+            showContent('add-day');
+        }
     } else {
         alert('Usuario o contraseña incorrectos.');
     }
