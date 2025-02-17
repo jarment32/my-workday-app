@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Workday App</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content" id="add-day">
+            <h2>Añadir Jornada</h2>
+            <p>Aquí puedes añadir lo realizado en la jornada de hoy.</p>
+        </div>
+        <div class="content" id="history">
+            <h2>Historial de Jornadas</h2>
+            <p>Aquí puedes ver el historial de jornadas de los últimos 30 días.</p>
+        </div>
+        <div class="content" id="pending">
+            <h2>Pendiente</h2>
+            <p>Funcionalidad aún por definir.</p>
+        </div>
+    </div>
+    <div class="navbar">
+        <div class="nav-item" onclick="showContent('add-day')">
+            <img src="assets/icon-add.png" alt="Añadir Jornada">
+            <span>Añadir</span>
+        </div>
+        <div class="nav-item" onclick="showContent('history')">
+            <img src="assets/icon-history.png" alt="Historial">
+            <span>Historial</span>
+        </div>
+        <div class="nav-item" onclick="showContent('pending')">
+            <img src="assets/icon-pending.png" alt="Pendiente">
+            <span>Pendiente</span>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
