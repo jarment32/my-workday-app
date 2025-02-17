@@ -50,13 +50,7 @@ function deleteUser(username) {
 }
 
 function loadRecords() {
-    // Simulación de datos de jornadas registradas
-    const records = [
-        { user: 'usuario1', day: '2025-02-16', option1: 'Opción 1A', option2: 'Opción 2B' },
-        { user: 'usuario2', day: '2025-02-15', option1: 'Opción 1B', option2: 'Opción 2C' },
-        { user: 'usuario3', day: '2025-02-14', option1: 'Opción 1C', option2: 'Opción 2A' },
-    ];
-
+    const records = JSON.parse(localStorage.getItem('records')) || [];
     const tbody = document.querySelector('#recordsTable tbody');
     tbody.innerHTML = '';
 
@@ -74,4 +68,11 @@ function loadRecords() {
 
 function isAuthenticated() {
     return localStorage.getItem('authenticated') === 'true';
+}
+
+function logout() {
+    localStorage.removeItem('authenticated');
+    localStorage.removeItem('username');
+    localStorage.removeItem('role');
+    window.location.href = 'index.html';
 }
